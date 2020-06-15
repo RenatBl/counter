@@ -8,5 +8,5 @@ import java.util.List;
 public interface PagesService {
     List<Page> findAll(User user);
     Page getOne(Long id);
-    void addNew(String url);
+    void addNew(String url, User user);
 }

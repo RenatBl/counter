@@ -34,9 +34,10 @@ public class PagesController {
         return "page";
     }
 
-    @PostMapping
-    public String newPage(@RequestParam("url") String url) {
-        pagesService.addNew(url);
+    @PostMapping("/newPage")
+    public String newPage(@RequestParam("url") String url,
+                          @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        pagesService.addNew(url, userDetails.getUser());
         return "redirect:/pages";
     }
 }

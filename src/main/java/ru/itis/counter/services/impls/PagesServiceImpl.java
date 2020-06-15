@@ -29,10 +29,11 @@ public class PagesServiceImpl implements PagesService {
     }
 
     @Override
-    public void addNew(String url) {
+    public void addNew(String url, User user) {
         PageSavingUtil.savePage(url);
         pagesRepository.save(Page.builder()
                 .url(url)
+                .owner(user)
                 .build());
     }
 }

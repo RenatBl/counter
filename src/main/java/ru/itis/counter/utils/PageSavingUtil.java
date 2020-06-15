@@ -35,7 +35,7 @@ public class PageSavingUtil {
     }
 
     private static String getNewPath(URL url) {
-        String path = url.getHost().split(".")[0];
+        String path = url.getHost().split("\\.")[1];
         return "D:/" + path + ".html";
     }
 }

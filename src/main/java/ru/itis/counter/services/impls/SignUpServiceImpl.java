@@ -4,6 +4,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.itis.counter.forms.SignUpForm;
 import ru.itis.counter.models.User;
+import ru.itis.counter.models.enums.Role;
 import ru.itis.counter.repositories.UsersRepository;
 import ru.itis.counter.services.SignUpService;
 
@@ -27,6 +28,8 @@ public class SignUpServiceImpl implements SignUpService {
             usersRepository.save(User.builder()
                     .username(form.getUsername())
                     .password(encoder.encode(form.getPassword()))
+                    .email(form.getEmail())
+                    .role(Role.USER)
                     .build());
         } else throw new IllegalArgumentException("User already exists");
     }

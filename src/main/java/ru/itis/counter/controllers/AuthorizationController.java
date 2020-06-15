@@ -8,22 +8,22 @@ import ru.itis.counter.forms.SignUpForm;
 import ru.itis.counter.services.SignUpService;
 
 @Controller
-public class SignUpController {
+public class AuthorizationController {
 
     private final SignUpService signUpService;
 
-    public SignUpController(SignUpService signUpService) {
+    public AuthorizationController(SignUpService signUpService) {
         this.signUpService = signUpService;
     }
 
-    @GetMapping("/signUp")
-    public String getSignUpPage() {
-        return "signUp";
+    @GetMapping("/login")
+    public String getLoginPage() {
+        return "login";
     }
 
     @PostMapping("/newUser")
-    private String signUp(@ModelAttribute("form") SignUpForm form) {
+    public String signUp(@ModelAttribute("form") SignUpForm form) {
         signUpService.signUp(form);
-        return "redirect:/signIn";
+        return "redirect:/login";
     }
 }

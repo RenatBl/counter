@@ -9,6 +9,6 @@ public class RootController {
 
     @GetMapping("/")
     public String getRoot(Authentication authentication) {
-        return authentication == null ? "redirect:/signIn" : "redirect:/profile";
+        return authentication == null ? "redirect:/login" : "redirect:/profile";
     }
 }
