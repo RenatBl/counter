@@ -10,6 +10,10 @@ import ru.itis.counter.services.SignUpService;
 
 import java.util.Optional;
 
+/**
+ * Класс, описывающий бизнес-логику регистрации пользователя
+ * */
+
 @Service
 public class SignUpServiceImpl implements SignUpService {
 

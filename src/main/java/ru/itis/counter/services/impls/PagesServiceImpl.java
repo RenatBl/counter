@@ -14,6 +14,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Класс, описывающий бизнес-логику работы со страницами
+ * */
+
 @Service
 public class PagesServiceImpl implements PagesService {
 
@@ -25,11 +29,16 @@ public class PagesServiceImpl implements PagesService {
         this.wordsReportRepository = wordsReportRepository;
     }
 
+    /** Получение всех страниц в виде списка */
     @Override
     public List<PageInfoDto> findAll(User user) {
         return new ArrayList<>(pagesRepository.getAllPages(user));
     }
 
+    /**
+     *  Получение одной страницы по ключу(id)
+     * Сохранение отчета в БД
+     * */
     @Override
     public Page getOne(Long id) {
         Page page = pagesRepository.getOne(id);
@@ -43,6 +52,10 @@ public class PagesServiceImpl implements PagesService {
         return page;
     }
 
+    /**
+     * Сохранение страницы в файл
+     * Добавление новой страницы в БД
+     * */
     @Override
     public void addNew(String url, User user) {
         PageSavingUtil.savePage(url);

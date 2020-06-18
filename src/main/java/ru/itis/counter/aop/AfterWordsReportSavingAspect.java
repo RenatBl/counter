@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+/**
+ * Аспект для логирования процесса сохранения отчета по словам в БД
+ * */
+
 @Aspect
 @Component
 @Slf4j

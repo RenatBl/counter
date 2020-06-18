@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Утилита для нахождения слов на сайте
+ * */
+
 public class WordsFindingService {
 
     private static final String delimiters = " |0|1|2|3|4|5|6|7|8|9|'|\\n|\\r|\\t|&|,|;|\\.|\\?|!|-|:|@|#|[|]|\\(|\\)|\\{|}|_|\\*|<|>|/|\"|\\+|=|–|«|»|%|\\$|©|°|·";

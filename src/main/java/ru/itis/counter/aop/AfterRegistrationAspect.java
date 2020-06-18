@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+/**
+ * Аспект для логирования процесса регистрации пользователя
+ * */
+
 @Aspect
 @Component
 @Slf4j

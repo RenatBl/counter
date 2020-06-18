@@ -8,10 +8,15 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+/**
+ * Аспект для логирования поиска новой веб-страницы
+ * */
+
 @Aspect
 @Component
 @Slf4j
 public class AfterSearchingPageAspect {
+
 
     @AfterThrowing("execution(* ru.itis.counter.utils.PageSavingUtil.savePage(..))")
     public void searchingError() {
