@@ -23,7 +23,7 @@ public class PagesController {
     @GetMapping("/pages")
     public String getAllPages(@AuthenticationPrincipal UserDetailsImpl userDetails,
                               Model model) {
-        model.addAttribute("pages", PageDto.get(pagesService.findAll(userDetails.getUser())));
+        model.addAttribute("pages", pagesService.findAll(userDetails.getUser()));
         return "pages";
     }
 

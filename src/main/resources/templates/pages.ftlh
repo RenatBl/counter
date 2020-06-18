@@ -34,9 +34,7 @@
     <div class="list-group">
         <#list pages as page>
             <form class="form" method="get" action="/pages/${page.id}">
-                <button type="submit" class="list-group-item list-group-item-action">${page.url}
-                    <span class="badge badge-primary badge-pill" style="float: right">Words: ${page.quantityOfWords}</span>
-                </button>
+                <button type="submit" class="list-group-item list-group-item-action">${page.url}</button>
             </form>
         </#list>
     </div>

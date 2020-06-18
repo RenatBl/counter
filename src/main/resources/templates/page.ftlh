@@ -16,27 +16,46 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+
 <@nav.menu/>
 
-<h1 align="center" style="margin-top: 2%"><u>${page.url}</u></h1>
+<h1 align="center" style="margin-top: 2%">
+    <u>
+        ${page.url}
+    </u>
+</h1>
 
 <div class="scroll">
-    <ul class="list-group">
-        <li class="list-group-item list-group-item-info" style="border: none; text-align: center">
-            The most frequently world:
-            <strong> ${page.mostFrequentWord}</strong>
-        </li>
-        <#list page.words?keys as key>
-            <li class="list-group-item" style="border: none">
-                <strong>${key} - </strong>
-                ${page.words[key]}
+    <div style="position: sticky; top: 0; z-index: 100">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-danger"
+                style="border: none; border-radius: 0; text-align: center">
+                Quantity of words:
+                <strong> ${page.quantityOfWords}</strong>
             </li>
-        </#list>
-    </ul>
+            <li class="list-group-item list-group-item-info"
+                style="border: none; border-radius: 0; text-align: center">
+                The most frequently world:
+                <strong> ${page.mostFrequentWord}</strong>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul class="list-group">
+            <#list page.words?keys as key>
+                <li class="list-group-item" style="border: none; border-radius: 0;">
+                    <strong>${key} - </strong>
+                    ${page.words[key]}
+                </li>
+            </#list>
+        </ul>
+    </div>
 </div>
 
 <iframe class="html-page" src="${page.url}">
 
 </iframe>
+
 </body>
 </html>

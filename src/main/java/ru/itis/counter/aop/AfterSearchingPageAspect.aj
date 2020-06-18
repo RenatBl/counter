@@ -1,7 +1,6 @@
 package ru.itis.counter.aop;
 
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,7 +14,7 @@ import java.time.LocalDateTime;
 public class AfterSearchingPageAspect {
 
     @AfterThrowing("execution(* ru.itis.counter.utils.PageSavingUtil.savePage(..))")
-    public void searchingError(JoinPoint joinPoint) {
+    public void searchingError() {
         log.error("Can't find specified page " + LocalDateTime.now().toString());
     }
 
