@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ru.itis.counter.utils.WordsFindingService;
+import ru.itis.counter.utils.WordsFindingUtil;
 
 import javax.persistence.*;
 import java.util.Map;
@@ -36,7 +36,7 @@ public class Page {
 
     @PostLoad
     public void loadPageInfo() {
-        words = WordsFindingService.getWordsOnPage(url);
+        words = WordsFindingUtil.getWordsOnPage(url);
         wordsQuantity = words.size();
         log.info("Page " + url + " loaded");
     }

@@ -11,14 +11,14 @@ import java.util.Map;
  * Утилита для нахождения слов на сайте
  * */
 
-public class WordsFindingService {
+public class WordsFindingUtil {
 
     private static final String delimiters = " |0|1|2|3|4|5|6|7|8|9|'|\\n|\\r|\\t|&|,|;|\\.|\\?|!|-|:|@|#|[|]|\\(|\\)|\\{|}|_|\\*|<|>|/|\"|\\+|=|–|«|»|%|\\$|©|°|·";
 
     public static Map<String, Integer> getWordsOnPage(String url) {
         String text = getText(url);
         String[] wordsArr = getWords(text);
-        return getWorlds(wordsArr);
+        return getWordsMap(wordsArr);
     }
 
     private static String getText(String url) {
@@ -35,7 +35,7 @@ public class WordsFindingService {
         return text.split(delimiters);
     }
 
-    private static Map<String, Integer> getWorlds(String[] wordsArr) {
+    private static Map<String, Integer> getWordsMap(String[] wordsArr) {
         Map<String, Integer> words = new HashMap<>();
         for (String word: wordsArr) {
             if (words.get(word) == null) {
